@@ -1,0 +1,14 @@
+<h2>Signin</h2>
+
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+    <input [formControl]="loginForm.controls['email']" formControlName="email" type="email" placeholder="Email"><br>
+    <input [formControl]="loginForm.controls['password']" formControlName="password" type="password" placeholder="Password"><br>
+
+    <button [disabled]="!loginForm.valid" type="submit">Login</button><br>
+    
+</form>
+
+<button routerLink="/signup">Signup</button>
+
+
+

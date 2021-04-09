@@ -1,0 +1,9 @@
+<h2>Favorite Publications</h2>
+<div *ngIf="favorites$ | async as favorites">
+    <div *ngFor="let item of favorites">
+        <h3>{{item.publication_title}}</h3>
+        <span>{{item.publication_name}} {{item.publication_firstname}} : {{item.publication_date | date: 'dd/MM/yyyy'}}</span>
+        <p>{{item.publication_text}}</p>
+        <button (click)="remove(item.publication_id)">remove to favorite</button><br><br>
+    </div>
+</div>

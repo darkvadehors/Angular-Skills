@@ -1,0 +1,19 @@
+<h2>Profile</h2>
+<div *ngIf="user$ | async as user">
+    <div *ngFor="let item of user">
+        <a class="nav" routerLink="/profile-edit">Edit Profile</a>
+        <a class="nav" routerLink="/favorite-user">Favorite Users</a>
+        <a class="nav" routerLink="/favorite-pub">Favorite Publications</a>
+        <br><br>
+        
+        <span *ngIf="item.name != '' && item.firstname != '' else undefine">{{ item.name }} - {{ item.firstname }}</span>
+        <ng-template #undefine>
+           Name and Firstname Undefine
+        </ng-template><br>
+        <p>Email: {{ item.email }}</p>
+        <span>Create At: {{ item.createAt | date: 'dd/MM/yyyy - HH:mm' }}</span><br>
+        <span>Last Connection: {{ item.lastConnect | date: 'dd/MM/yyyy - HH:mm' }}</span>
+    </div>
+</div>
+
+

@@ -1,0 +1,8 @@
+<h2>Edit Profile</h2>
+
+<form [formGroup]="userForm" (ngSubmit)="save()">
+    <input [formControl]="userForm.controls['name']" formControlName="name" type="text" placeholder="Name"><br>
+    <input [formControl]="userForm.controls['firstname']" formControlName="firstname" type="text" placeholder="Firstname"><br>
+
+    <button [disabled]="!userForm.valid" type="submit">save</button>
+</form>

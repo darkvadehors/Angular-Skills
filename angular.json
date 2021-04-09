@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Api-Skills"
+    }
+  },
+  "defaultProject": "Api-Skills",
+  "cli": {
+    "analytics": false
+  }
 }
