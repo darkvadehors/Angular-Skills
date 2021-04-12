@@ -37,7 +37,6 @@ export class IsLoggedGuard implements CanActivate {
         }
         else if(result[0].isLogged === 1){
           console.log('Logged');
-          
           return true
         }
       }

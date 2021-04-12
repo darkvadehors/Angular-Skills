@@ -1,1 +1,8 @@
-<p>favorite-users works!</p>
+<h2>Favorite Users</h2>
+
+<div *ngIf="favorites$ | async as favorites">
+    <div *ngFor="let item of favorites">
+        <span>{{item.favorite_name}} {{item.favorite_firstname}}</span>
+        <button (click)="remove(item.favorite_id)">remove</button>
+    </div>
+</div>
