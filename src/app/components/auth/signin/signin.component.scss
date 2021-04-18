@@ -1,0 +1,26 @@
+ion-content {
+    h2{
+        text-align: center;
+    }
+    .input{
+        width: 80%;
+        margin-left: 10% ;
+
+        .error-message
+        {
+        color: red;
+        font-size: 14px;
+        margin-left: 20px;
+        margin-top: 5px;
+        }
+        div.item-native{
+            padding-left: 0;
+        }
+    }
+
+    #button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+  }

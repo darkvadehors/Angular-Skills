@@ -19,9 +19,26 @@ export class SigninComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this._fb.group({
-      email: ['', Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      email: [ '', [
+        Validators.required,
+        Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")
+      ] ],
+      password: [ '', [
+        Validators.required,
+        Validators.minLength(6)
+      ] ]
     })
+  }
+
+  validation_messages = {
+    'email': [
+      { type: 'required', message: 'eMail is required.' },
+      { type: 'pattern', message: 'eMail must be valide.' },
+    ],
+    'password': [
+      { type: 'required', message: 'password is required.' }
+    ],
+
   }
 
   async login(){
@@ -35,7 +52,7 @@ export class SigninComponent implements OnInit {
           if(key === 'token')
             localStorage.setItem('token', `${value}`)
         }
-        
+
         this._route.navigate(['/publications'])
       }
     })

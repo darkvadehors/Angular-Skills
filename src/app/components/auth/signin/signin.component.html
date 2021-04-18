@@ -1,14 +1,49 @@
-<h2>Signin</h2>
+<ion-content>
+    <h2>Signin</h2>
 
-<form [formGroup]="loginForm" (ngSubmit)="login()">
-    <input [formControl]="loginForm.controls['email']" formControlName="email" type="email" placeholder="Email"><br>
-    <input [formControl]="loginForm.controls['password']" formControlName="password" type="password" placeholder="Password"><br>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="input">
+            <ion-item>
+                <ion-label position="floating">
+                    <p>
+                        Email:
+                    </p>
+                </ion-label>
+                <ion-input [formControl]="loginForm.controls['email']" formControlName="email" type="email" placeholder="email@email.com"></ion-input>
+            </ion-item>
+            <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.email">
+                    <div class="error-message" *ngIf="loginForm.get('email').hasError(validation.type) && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+                        {{ validation.message }}
+                    </div>
+                </ng-container>
+            </div>
+        </div>
 
-    <button [disabled]="!loginForm.valid" type="submit">Login</button><br>
-    
-</form>
+        <div class="input">
+            <ion-item>
+                <ion-label position="floating">
+                    <p>
+                        Password:
+                    </p>
+                </ion-label>
+                <ion-input [formControl]="loginForm.controls['password']" formControlName="password" type="password" placeholder="6 caractères minimum"></ion-input>
+            </ion-item>
 
-<button routerLink="/signup">Signup</button>
+            <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.password">
+                <div class="error-message" *ngIf="loginForm.get('password').hasError(validation.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+                    {{ validation.message }}
+                </div>
+                </ng-container>
+            </div>
+        </div>
+
+        <div id="button">
+            <ion-button routerLink="/signup">Signup</ion-button>
+            <ion-button [disabled]="!loginForm.valid" type="submit">Login</ion-button>
+        </div>
+    </form>
 
 
-
+</ion-content>
