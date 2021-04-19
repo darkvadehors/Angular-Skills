@@ -29,7 +29,7 @@ export class SignupComponent implements OnInit {
 
     this._authService.signup({email, password}).then(result => {
       console.log('result => ', result);
-      
+      this._route.navigate([ '/signin' ])
     })
   }
 }
