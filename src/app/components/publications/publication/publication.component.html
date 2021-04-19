@@ -1,12 +1,15 @@
-<h2>{{title}}</h2>
+<ion-content>
 
-<div *ngIf="publications$ | async as publications">
-    <button *ngIf="filter" (click)="addFavoriteUser(publications[0].publication_userId)">Add user to favorite</button>
-    
-    <div *ngFor="let item of publications">
-        <h3>{{ item.publication_title }}</h3>
-        <p><a [routerLink]="'/user/' + item.publication_userId">{{ item.publication_name }} {{ item.publication_firstname }}</a> : {{item.publication_date | date: 'dd/MM/yyyy - HH:mm'}}</p>
-        <span>{{ item.publication_text }}</span><br>
-        <button (click)="addFavoritePublication(item.publication_id)">Add to favorite</button>
+    <ion-title>{{title}}</ion-title>
+
+    <div *ngIf="publications$ | async as publications">
+        <button *ngIf="filter" (click)="addFavoriteUser(publications[0].publication_userId)">Add user to favorite</button>
+
+        <div *ngFor="let item of publications">
+            <h3>{{ item.publication_title }}</h3>
+            <p><a [routerLink]="'/user/' + item.publication_userId">{{ item.publication_name }} {{ item.publication_firstname }}</a> : {{item.publication_date | date: 'dd/MM/yyyy - HH:mm'}}</p>
+            <span>{{ item.publication_text }}</span><br>
+            <button (click)="addFavoritePublication(item.publication_id)">Add to favorite</button>
+        </div>
     </div>
-</div>
+</ion-content>

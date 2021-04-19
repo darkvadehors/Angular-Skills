@@ -1,4 +1,11 @@
-a {
-    margin-left: 5px;
-    margin-right: 5px;
+ion-toolbar{
+    text-align: center;
+    a {
+        margin-left: 5px;
+        margin-right: 5px;
+        text-decoration: none;
+    }
+    ion-button {
+        --color: red;
+    }
 }

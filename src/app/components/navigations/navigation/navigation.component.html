@@ -1,6 +1,8 @@
-<div>
-    <a routerLink="/publications">Publication</a>
-    <a routerLink="/profile">Profile</a>
-    <button (click)="loggout()">Loggout</button>
-</div>
-<router-outlet></router-outlet>
+<ion-toolbar >
+    <ion-button size="small" color="light" ><a routerLink="/publications">Publication</a></ion-button>
+    <ion-button size="small" color="light" ><a routerLink="/profile">Profile</a></ion-button>
+    <ion-button slot="end" class="red" size="small" color="light" (click)="loggout()"><ion-icon name="exit-outline"></ion-icon></ion-button>
+</ion-toolbar>
+<ion-content>
+    <router-outlet></router-outlet>
+</ion-content>
