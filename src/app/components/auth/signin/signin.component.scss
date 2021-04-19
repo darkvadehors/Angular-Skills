@@ -1,16 +1,16 @@
 ion-content {
-    h2{
-        text-align: center;
-    }
+    text-align: center;
+
     .input{
+        display: inline-block;
         width: 80%;
-        margin-left: 10% ;
+        max-width: 400px;
 
         .error-message
         {
         color: red;
-        font-size: 14px;
-        margin-left: 20px;
+        font-size: 12px;
+        margin-left: 5px;
         margin-top: 5px;
         }
         div.item-native{
@@ -19,8 +19,14 @@ ion-content {
     }
 
     #button {
-        display: flex;
-        flex-direction: row;
+        text-align: center;
+        display: block;
+        flex-direction: column;
         justify-content: center;
+
+        #signin:hover{
+            --background-hover:"lightgreen";
+        }
     }
+
   }

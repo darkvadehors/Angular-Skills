@@ -1,0 +1,27 @@
+ion-content {
+    text-align: center;
+    .input{
+        display: inline-block;
+        width: 80%;
+        max-width: 400px;
+
+        .error-message
+        {
+        // color: red;
+        font-size: 14px;
+        margin-left: 20px;
+        margin-top: 5px;
+        }
+        div.item-native{
+            padding-left: 0;
+        }
+    }
+
+    #button {
+        text-align: center;
+        display: block;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+  }

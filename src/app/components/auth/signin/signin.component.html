@@ -5,11 +5,9 @@
         <div class="input">
             <ion-item>
                 <ion-label position="floating">
-                    <p>
-                        Email:
-                    </p>
+                    <p>Email:</p>
                 </ion-label>
-                <ion-input [formControl]="loginForm.controls['email']" formControlName="email" type="email" placeholder="email@email.com"></ion-input>
+                <ion-input [formControl]="loginForm.controls['email']" formControlName="email" type="email" placeholder="monemail@moi.com"></ion-input>
             </ion-item>
             <div class="validation-errors">
                 <ng-container *ngFor="let validation of validation_messages.email">
@@ -18,16 +16,11 @@
                     </div>
                 </ng-container>
             </div>
-        </div>
-
-        <div class="input">
             <ion-item>
                 <ion-label position="floating">
-                    <p>
-                        Password:
-                    </p>
+                    <p>Mot de passe:</p>
                 </ion-label>
-                <ion-input [formControl]="loginForm.controls['password']" formControlName="password" type="password" placeholder="6 caractères minimum"></ion-input>
+                <ion-input [formControl]="loginForm.controls['password']" formControlName="password" type="password" placeholder="monmotdepasse"></ion-input>
             </ion-item>
 
             <div class="validation-errors">
@@ -40,8 +33,11 @@
         </div>
 
         <div id="button">
-            <ion-button routerLink="/signup">Signup</ion-button>
-            <ion-button [disabled]="!loginForm.valid" type="submit">Login</ion-button>
+            <ion-button color="success" [disabled]="!loginForm.valid" type="submit">Connexion</ion-button>
+            <div>
+                <p>Pas de compte ?</p>
+                <ion-button id="signin"size="small" color="medium" routerLink="/signup">enregistrez vous!</ion-button>
+            </div>
         </div>
     </form>
 

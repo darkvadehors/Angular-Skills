@@ -1,9 +1,30 @@
-<h2>Signup</h2>
+<ion-content>
+    <ion-title>
+        Créer un compte.
+    </ion-title>
 
-<form [formGroup]="signupForm" (ngSubmit)="signup()">
-    <input [formControl]="signupForm.controls['email']" formControlName="email" type="email" placeholder="Email"><br>
-    <input [formControl]="signupForm.controls['password']" formControlName="password" type="password" placeholder="Password"><br>
+    <form [formGroup]="signupForm" (ngSubmit)="signup()">
+        <div class="input">
+            <ion-item>
+                <ion-label position="floating">
+                    <p>Email:</p>
+                </ion-label>
+                <ion-input [formControl]="signupForm.controls['email']" formControlName="email" type="email" placeholder="monemail@moi.com"></ion-input>
+            </ion-item>
 
-    <button [disabled]="!signupForm.valid" type="submit">signup</button><br>
-    
-</form>
+            <ion-item>
+                <ion-label position="floating">
+                    <p>Mot de passe:</p>
+                </ion-label>
+                <ion-input [formControl]="signupForm.controls['password']" formControlName="password" type="password" placeholder="6 caractères minimum"></ion-input>
+            </ion-item>
+
+            <div id="button">
+                <ion-button color="success" [disabled]="!signupForm.valid" type="submit">Enregistrement</ion-button><br>
+                <p>Déjà un compte ?</p>
+            <ion-button color="medium" size="small" routerLink="/signin">Connexion</ion-button>
+        </div>
+    </div>
+    </form>
+
+</ion-content>
