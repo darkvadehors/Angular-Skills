@@ -1,19 +1,41 @@
-<h2>Profile</h2>
-<div *ngIf="user$ | async as user">
-    <div *ngFor="let item of user">
-        <a class="nav" routerLink="/profile-edit">Edit Profile</a>
-        <a class="nav" routerLink="/favorite-user">Favorite Users</a>
-        <a class="nav" routerLink="/favorite-pub">Favorite Publications</a>
-        <br><br>
-        
-        <span *ngIf="item.name != '' && item.firstname != '' else undefine">{{ item.name }} - {{ item.firstname }}</span>
-        <ng-template #undefine>
-           Name and Firstname Undefine
-        </ng-template><br>
-        <p>Email: {{ item.email }}</p>
-        <span>Create At: {{ item.createAt | date: 'dd/MM/yyyy - HH:mm' }}</span><br>
-        <span>Last Connection: {{ item.lastConnect | date: 'dd/MM/yyyy - HH:mm' }}</span>
-    </div>
-</div>
+<ion-content>
+
+    <ion-card>
+        <div *ngIf="user$ | async as user">
+            <ion-card-header>
+
+                <ion-card-title>Profile</ion-card-title>
+                <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
+
+                <div class="nav">
+                    <ion-button size="small" color="light" ><a routerLink="/profile-edit">Edit Profile</a></ion-button>
+                    <ion-button size="small" color="light" ><a routerLink="/favorite-user">Favorite Users</a></ion-button>
+                    <ion-button size="small" color="light" ><a routerLink="/favorite-pub">Favorite Publications</a></ion-button>
+                </div>
+
+            </ion-card-header>
+
+            <ion-card-content>
+
+                <div *ngFor="let item of user">
+                    <span *ngIf="item.name != '' && item.firstname != '' else undefine">{{ item.name }} - {{ item.firstname }}</span>
+                    <ng-template #undefine>
+                        Name and Firstname Undefine
+                    </ng-template><br>
+                    <p>Email: {{ item.email }}</p>
+                    <span>Create At: {{ item.createAt | date: 'dd/MM/yyyy - HH:mm' }}</span><br>
+                    <span>Last Connection: {{ item.lastConnect | date: 'dd/MM/yyyy - HH:mm' }}</span>
+                </div>
+
+            </ion-card-content>
+
+        </div>
+
+    </ion-card>
 
 
+
+
+
+
+</ion-content>
