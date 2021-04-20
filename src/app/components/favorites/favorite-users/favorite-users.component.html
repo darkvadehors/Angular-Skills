@@ -1,8 +1,15 @@
-<h2>Favorite Users</h2>
+<ion-content>
 
-<div *ngIf="favorites$ | async as favorites">
-    <div *ngFor="let item of favorites">
-        <span>{{item.favorite_name}} {{item.favorite_firstname}}</span>
-        <button (click)="remove(item.favorite_id)">remove</button>
+    <ion-title>Favorite Users</ion-title>
+
+    <div *ngIf="favorites$ | async as favorites">
+        <div *ngFor="let item of favorites">
+            <ion-list>
+                <ion-item>
+                    <ion-item>{{item.favorite_name}} {{item.favorite_firstname}}</ion-item>
+                    <ion-button size="small" color="danger" slot="end" (click)="remove(item.favorite_id)">Supprimer</ion-button>
+                </ion-item>
+            </ion-list>
+        </div>
     </div>
-</div>
+</ion-content>
