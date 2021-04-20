@@ -13,11 +13,11 @@
                     {{item.publication_text}}
                 </ion-card-content>
 
-                <ion-item class="supFav">
-                    <button (click)="remove(item.publication_id)">
+                <ion-item >
+                    <ion-button color="light" (click)="remove(item.publication_id)">
                         <ion-label>Supprimer des Favoris</ion-label>
                         <ion-icon name="heart-dislike-outline"></ion-icon>
-                    </button>
+                    </ion-button>
                 </ion-item>
             </ion-card>
 
