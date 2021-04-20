@@ -3,7 +3,7 @@
     <ion-title>{{title}}</ion-title>
 
     <div *ngIf="publications$ | async as publications">
-        <button *ngIf="filter" (click)="addFavoriteUser(publications[0].publication_userId)">Add user to favorite</button>
+        <ion-button  class="publicationAddFav" size="small" color="success" *ngIf="filter" (click)="addFavoriteUser(publications[0].publication_userId)">Add {{publications[0].publication_name}} to favorite</ion-button>
 
         <div *ngFor="let item of publications">
             <ion-card>
