@@ -1,8 +1,10 @@
 ion-toolbar{
     text-align: center;
+
     a {
         margin-left: 5px;
         margin-right: 5px;
+        text-transform: capitalize;
         text-decoration: none;
     }
 }
