@@ -1,8 +1,21 @@
-<h2>Edit Profile</h2>
+<ion-content>
+    <ion-title>Réglages du Compte</ion-title>
 
-<form [formGroup]="userForm" (ngSubmit)="save()">
-    <input [formControl]="userForm.controls['name']" formControlName="name" type="text" placeholder="Name"><br>
-    <input [formControl]="userForm.controls['firstname']" formControlName="firstname" type="text" placeholder="Firstname"><br>
 
-    <button [disabled]="!userForm.valid" type="submit">save</button>
-</form>
+    <form [formGroup]="userForm" (ngSubmit)="save()">
+        <ion-item>
+            <ion-label>
+                <p>Prénom:</p>
+                <ion-input [formControl]="userForm.controls['name']" formControlName="name" type="text" placeholder="Name"></ion-input>
+            </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>
+                <p>Nom:</p>
+                <ion-input [formControl]="userForm.controls['firstname']" formControlName="firstname" type="text" placeholder="Firstname"></ion-input>
+            </ion-label>
+        </ion-item>
+
+        <ion-button expand="block" size="small" size="small" [disabled]="!userForm.valid" type="submit">save</ion-button>
+    </form>
+</ion-content>
